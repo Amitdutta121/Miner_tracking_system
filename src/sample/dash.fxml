@@ -86,13 +86,42 @@
             <Pane layoutX="76.0" layoutY="106.0" prefHeight="196.0" prefWidth="146.0">
                <children>
                   <Button cacheShape="false" centerShape="false" focusTraversable="false" layoutX="-20.0" mnemonicParsing="false" opacity="0.7" prefHeight="208.0" prefWidth="185.0" scaleShape="false" styleClass="buttonx" stylesheets="@../css/fullpackstyling.css" />
-                  <Label fx:id="temprature" layoutX="32.0" layoutY="74.0" prefHeight="61.0" prefWidth="82.0" text="29 C" textFill="WHITE">
+                  <Label fx:id="temprature" alignment="CENTER" layoutX="-14.0" layoutY="42.0" prefHeight="124.0" prefWidth="146.0" style="-fx-text-alignment: center;" text="   29 C" textFill="WHITE">
                      <font>
-                        <Font size="38.0" />
+                        <Font size="26.0" />
                      </font>
                   </Label>
+                  <Label layoutX="42.0" layoutY="158.0" text="Temprature" textFill="WHITE" />
+                  <Button cacheShape="false" centerShape="false" focusTraversable="false" layoutX="253.0" layoutY="-4.0" mnemonicParsing="false" opacity="0.7" prefHeight="208.0" prefWidth="185.0" scaleShape="false" styleClass="buttonx" stylesheets="@../css/fullpackstyling.css" />
+                  <Label fx:id="pressure" alignment="CENTER" contentDisplay="CENTER" layoutX="253.0" layoutY="68.0" prefHeight="61.0" prefWidth="185.0" style="-fx-text-alignment: center;" text="   29 C" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="154.0" text="Pressure" textFill="WHITE" />
                </children>
             </Pane>
+            <Button cacheShape="false" centerShape="false" focusTraversable="false" layoutX="597.0" layoutY="106.0" mnemonicParsing="false" opacity="0.7" prefHeight="208.0" prefWidth="185.0" scaleShape="false" styleClass="buttonx" stylesheets="@../css/fullpackstyling.css" />
+            <Label fx:id="altidute" alignment="CENTER" contentDisplay="CENTER" layoutX="597.0" layoutY="178.0" prefHeight="61.0" prefWidth="185.0" style="-fx-text-alignment: center;" text="   29 C" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="668.0" layoutY="263.0" prefHeight="17.0" prefWidth="77.0" text="Altitude" textFill="WHITE" />
+            <Button cacheShape="false" centerShape="false" focusTraversable="false" layoutX="207.0" layoutY="387.0" mnemonicParsing="false" opacity="0.7" prefHeight="208.0" prefWidth="185.0" scaleShape="false" styleClass="buttonx" stylesheets="@../css/fullpackstyling.css" />
+            <Label fx:id="naturalgassensor" alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="459.0" prefHeight="61.0" prefWidth="185.0" style="-fx-text-alignment: center;" text="   29 C" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="545.0" text="Natural gas sensor" textFill="WHITE" />
+            <Button cacheShape="false" centerShape="false" focusTraversable="false" layoutX="468.0" layoutY="387.0" mnemonicParsing="false" opacity="0.7" prefHeight="208.0" prefWidth="185.0" scaleShape="false" styleClass="buttonx" stylesheets="@../css/fullpackstyling.css" />
+            <Label fx:id="cosensor" alignment="CENTER" contentDisplay="CENTER" layoutX="468.0" layoutY="459.0" prefHeight="61.0" prefWidth="185.0" style="-fx-text-alignment: center;" text="   29 C" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="533.0" layoutY="545.0" text="CO sensor" textFill="WHITE" />
          </children>
       </Pane>
    </children>

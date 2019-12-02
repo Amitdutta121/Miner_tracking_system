@@ -105,6 +105,16 @@
                               <Circle fx:id="circle" fill="#ff1f59" layoutX="8.0" layoutY="15.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                            </children>
                         </Pane>
+                        <Pane layoutX="7.0" layoutY="242.0" prefHeight="27.0" prefWidth="764.0" style="-fx-background-color: #e7e7e7;">
+                           <children>
+                              <Circle fx:id="circle2" fill="#ff1f59" layoutX="750.0" layoutY="14.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="756.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/router.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
                      </children>
                   </Pane>
                </children>

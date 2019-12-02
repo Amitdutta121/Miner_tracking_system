@@ -26,6 +26,9 @@ public class trackMinerController implements Initializable{
     public Circle circle;
 
     @FXML
+    public Circle circle2;
+
+    @FXML
     private Label distance_label;
 
 
@@ -54,8 +57,6 @@ public class trackMinerController implements Initializable{
             Connection connection = conn.getConnection();
 
             try {
-                distance_label.setText("");
-
                 Statement statement = connection.createStatement();
 
                 String sql = "SELECT * FROM alldata ORDER BY data_id DESC";
@@ -63,15 +64,20 @@ public class trackMinerController implements Initializable{
 
 
                 set.next();
+                String connectedRouter = set.getString("router_mac_address");
                 String d = set.getString("distance");
                 double mainDistance = calculateDistance(Double.parseDouble(d),2400.0);
 
 
 
                 Platform.runLater(()->{
-                    distance_label.setLayoutX(Math.round(mainDistance*10));
-                    circle.setLayoutX(Math.round(mainDistance*10));
-                    distance_label.setText(Math.round(mainDistance)+"");
+                    if (connectedRouter.equals("RIP")){
+                        circle2.setVisible(false);
+                        circle.setLayoutX(Math.round(mainDistance*10));
+                    }else{
+                        circle.setVisible(false);
+                        circle2.setLayoutX(Math.round(750-mainDistance*10));
+                    }
                 });
             } catch (Exception e) {
                 e.printStackTrace();
