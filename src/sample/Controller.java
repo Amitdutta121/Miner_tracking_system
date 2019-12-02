@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -17,20 +15,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 public class Controller implements Initializable {
 
-       public static int count = 1;
+    public static int count = 1;
 
     @FXML
     public Circle toggleBtn;
-
-
 
     @FXML
     private void dashboard(javafx.event.ActionEvent event) throws IOException {
@@ -69,6 +63,15 @@ public class Controller implements Initializable {
     @FXML
     private void trackminer(javafx.event.ActionEvent event) throws IOException {
         Parent dash = FXMLLoader.load(getClass().getResource("minerTracker.fxml"));
+        Scene scene = new Scene(dash);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    private void visual(javafx.event.ActionEvent event) throws IOException {
+        Parent dash = FXMLLoader.load(getClass().getResource("visual.fxml"));
         Scene scene = new Scene(dash);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(scene);

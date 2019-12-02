@@ -167,12 +167,12 @@
                             <font>
                                 <Font name="Arial Bold" size="13.0" />
                             </font></Label>
-                  <Circle fx:id="toggleBtn" fill="DODGERBLUE" layoutX="86.0" layoutY="145.0"  radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="toggleBtn" fill="DODGERBLUE" layoutX="86.0" layoutY="145.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
                     </children>
                 </Pane>
                 <Pane layoutX="559.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
+                        <Button mnemonicParsing="false" onAction="#visual" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../css/fullpackstyling.css" />
                         <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                             <fill>
                                 <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
@@ -189,7 +189,7 @@
                                 <Image url="@../resources/icons8_Broccoli_64px_2.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="PM" textFill="WHITE">
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Data visualization" textFill="WHITE">
                             <font>
                                 <Font name="Arial Bold" size="13.0" />
                             </font></Label>
