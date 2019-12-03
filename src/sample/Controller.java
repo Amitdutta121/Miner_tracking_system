@@ -26,6 +26,9 @@ public class Controller implements Initializable {
     @FXML
     public Circle toggleBtn;
 
+    ConnectionClass conn = null;
+    Connection connection = null;
+
     @FXML
     private void dashboard(javafx.event.ActionEvent event) throws IOException {
         Parent dash = FXMLLoader.load(getClass().getResource("dash.fxml"));
@@ -81,13 +84,14 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        conn = new ConnectionClass();
+        connection = conn.getConnection();
+
         toggleBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (count%2 == 0){
                     toggleBtn.setFill(Paint.valueOf("1e90ff"));
-                    ConnectionClass conn = new ConnectionClass();
-                    Connection connection = conn.getConnection();
                     String sql = "UPDATE alert SET alert_value='"+0+"' WHERE alert_id='"+1+"'";
                     Statement statement = null;
                     try {
@@ -100,8 +104,6 @@ public class Controller implements Initializable {
                 }
                 else{
                     toggleBtn.setFill(Paint.valueOf("f00"));
-                    ConnectionClass conn = new ConnectionClass();
-                    Connection connection = conn.getConnection();
                     String sql = "UPDATE alert SET alert_value=1 WHERE alert_id=1";
                     Statement statement = null;
                     try {

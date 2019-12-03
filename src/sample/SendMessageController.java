@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,14 +12,19 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class SendMessageController {
+public class SendMessageController implements Initializable {
 
 
     @FXML
     private TextField message;
+
+    ConnectionClass conn = null;
+    Connection connection = null;
 
 
     @FXML
@@ -36,8 +42,7 @@ public class SendMessageController {
         String msg = message.getText();
         System.out.println(msg);
 
-        ConnectionClass conn = new ConnectionClass();
-        Connection connection = conn.getConnection();
+
 
         try {
             String sql = "INSERT INTO message VALUES(null,'"+msg+"')";
@@ -50,4 +55,9 @@ public class SendMessageController {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        conn = new ConnectionClass();
+        connection = conn.getConnection();
+    }
 }

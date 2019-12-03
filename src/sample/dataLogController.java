@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
@@ -35,6 +36,8 @@ public class dataLogController implements Initializable {
     private TableColumn<Data, String> col_router_mac_address;
     @FXML
     private TableColumn<Data, String> col_data;
+    ConnectionClass conn = null;
+    Connection connection = null;
 
 
     @FXML
@@ -49,14 +52,13 @@ public class dataLogController implements Initializable {
     ObservableList<Data> oblist = FXCollections.observableArrayList();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        conn = new ConnectionClass();
+        connection = conn.getConnection();
         refreshTable();
 
     }
 
     public void refreshTable(){
-
-        ConnectionClass conn = new ConnectionClass();
-        Connection connection = conn.getConnection();
 
         try {
             new Thread(new Runnable() {

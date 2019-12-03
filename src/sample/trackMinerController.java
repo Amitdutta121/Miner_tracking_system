@@ -31,6 +31,8 @@ public class trackMinerController implements Initializable{
     @FXML
     private Label distance_label;
 
+    ConnectionClass conn = null;
+    Connection connection = null;
 
     @FXML
     private void home(javafx.event.ActionEvent event) throws IOException {
@@ -44,6 +46,8 @@ public class trackMinerController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        conn = new ConnectionClass();
+        connection = conn.getConnection();
         Timer timer = new Timer(true); //set it as a deamon
         timer.schedule(new MyTimer(), 0, 100);
     }
@@ -53,9 +57,6 @@ public class trackMinerController implements Initializable{
 
         @Override
         public void run() {
-            ConnectionClass conn = new ConnectionClass();
-            Connection connection = conn.getConnection();
-
             try {
                 Statement statement = connection.createStatement();
 

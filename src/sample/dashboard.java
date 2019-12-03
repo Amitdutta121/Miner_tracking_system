@@ -37,8 +37,14 @@ public class dashboard implements Initializable {
     @FXML
     public Label cosensor;
 
+    ConnectionClass conn = null;
+    Connection connection = null;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        conn = new ConnectionClass();
+        connection = conn.getConnection();
+
         Timer timer = new Timer(true); //set it as a deamon
         timer.schedule(new MyTimer(), 0, 1000);
 
@@ -57,8 +63,6 @@ public class dashboard implements Initializable {
 
         @Override
         public void run() {
-            ConnectionClass conn = new ConnectionClass();
-            Connection connection = conn.getConnection();
 
             try {
                 Statement statement = connection.createStatement();
